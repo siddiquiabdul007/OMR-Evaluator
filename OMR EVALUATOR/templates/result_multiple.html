@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OMR Processing - Results</title>
+    <style>
+        body {
+            background-color: #f5f5dc; /* Beige background color */
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            color: #4b0082; /* Indigo heading color */
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #ffffff; /* White background color for list items */
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+        }
+
+        p {
+            color: #4b0082; /* Indigo text color */
+        }
+    </style>
+</head>
+<body>
+    <h1>OMR Processing - Results</h1>
+
+    {% if results %}
+        <h2>Results for each image:</h2>
+        <ul>
+            {% for result in results %}
+                <li>{{ result['filename'] }} - Number of correct answers: {{ result['correct_answers'] }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No results available.</p>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,6 @@
+FLASK
+OPEN CV
+NUMPY
+IMUTILS
+REQUESTS
+install the above mentioned libraries by using command pip install --prefix

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OMR Processing - Multiple Images</title>
+    <style>
+        body {
+            background-color: #f5f5dc; /* Beige background color */
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #4b0082; /* Indigo heading color */
+            margin-top: 0; /* Remove default margin from the top */
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 400px;
+            margin: auto;
+            background-color: #ffffff; /* White form background color */
+            padding: 20px;
+            border-radius: 15px; /* Rounded corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+        }
+
+        label {
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="file"],
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 15px; /* Rounded corners for inputs and button */
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4b0082; /* Indigo button color */
+            color: #ffffff; /* White text color */
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #800080; /* Darker indigo on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>OMR Processing - Multiple Images</h1>
+
+    <form method="post" enctype="multipart/form-data">
+        <label for="answer_key">Enter Answer Key (e.g., 0:1, 1:4, 2:0, 3:2, 4:0):</label>
+        <input type="text" name="answer_key" required>
+        
+        <label for="images">Upload OMR Images:</label>
+        <input type="file" name="images" accept=".png, .jpg, .jpeg" multiple required>
+
+        <button type="submit">Process Images</button>
+    </form>
+</body>
+</html>
